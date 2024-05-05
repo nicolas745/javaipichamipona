@@ -1,16 +1,15 @@
 package com.example.demo.Repository;
 
-import com.example.demo.model.day;
 import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.demo.model.Game;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface dayRep extends JpaRepository<day,Long> {
+public interface gameRep extends JpaRepository<Game,Long> {
     @Override
-    List<day> findAll();
-    day save(day day);
-    void delete(day day);
+    List<Game> findAll();
+    void deleteById(Long id);
 
 }

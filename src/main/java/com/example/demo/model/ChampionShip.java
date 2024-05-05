@@ -17,8 +17,8 @@ public class ChampionShip {
     @ManyToMany
     @JoinTable(
             name = "Team_Championship",
-            joinColumns = @JoinColumn(name = "championship_id"),
-            inverseJoinColumns = @JoinColumn(name = "team_id")
+            joinColumns = @JoinColumn(name = "team_id"),
+            inverseJoinColumns = @JoinColumn(name = "championship_id")
     )
     private Set<team> teams;
 

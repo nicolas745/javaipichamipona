@@ -17,7 +17,7 @@ public class user {
         this.userRep = userRep;
     }
 
-    @GetMapping("/list")
+    @GetMapping("/")
     public List<Map<String, Object>> list(){
         return new userstruc(userRep.findAll()).getdata();
     }

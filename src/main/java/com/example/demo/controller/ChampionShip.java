@@ -26,7 +26,7 @@ public class ChampionShip {
         }
         return new HashMap<>();
     }
-    @PostMapping(value = "/add")
+    @PostMapping(value = "/")
     public HashMap<String,Object> add(@RequestBody com.example.demo.model.ChampionShip championShip) {
         championShipRep.save(championShip);
         return  championShip.getData();

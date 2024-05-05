@@ -42,4 +42,7 @@ public class team {
         data.put("championships",championships);
         return data;
     }
+    public Set<ChampionShip> getChampionships(){
+        return championships;
+    }
 }

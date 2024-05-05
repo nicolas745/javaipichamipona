@@ -14,5 +14,5 @@ public interface teamRep extends JpaRepository<team,Long>
     List<team> findAll();
     List<team> findTeamsByChampionships_Id(Long championshipId);
     Optional<team> findById(Long id);
-
+    void deleteById(Long id);
 }
