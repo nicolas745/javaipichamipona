@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Null;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/championnats")
@@ -14,8 +15,8 @@ public class ChampionShip {
     public ChampionShip(ChampionShipRep championShipRep) {
         this.championShipRep = championShipRep;
     }
-    @GetMapping(value = "/list")
-    public String list() {
+    @GetMapping(value = "/")
+    public List<HashMap<String,Object>> list() {
         return new ChampionShipstruc(championShipRep.findAll()).getData();
     }
 
@@ -53,8 +54,9 @@ public class ChampionShip {
             if (championShip.getDrawPoint() >= 0) {
                 championShipRep.findById(idChampionShip).get().setDrawPoint(championShip.getDrawPoint());
             }
+            championShipRep.save(championShipRep.findById(idChampionShip).get());
         }
-        return  new HashMap<>();
+        return  championShipRep.findById(idChampionShip).get().getData();
     }
 
     @DeleteMapping(value = "/id/{idChampionShip}")

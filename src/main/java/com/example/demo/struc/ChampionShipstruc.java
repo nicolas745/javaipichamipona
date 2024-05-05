@@ -13,11 +13,11 @@ public class ChampionShipstruc {
         this.championShipList = championShipList;
     }
 
-    public String getData(){
+    public List<HashMap<String, Object>> getData(){
         List<HashMap<String, Object>> list = new ArrayList<>();
         for (ChampionShip championShip : championShipList) {
             list.add(championShip.getData());
         }
-        return list.toString();
+        return list;
     }
 }

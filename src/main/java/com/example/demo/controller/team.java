@@ -21,8 +21,8 @@ public class team {
         this.championShipRep = championShipRep;
     }
 
-    @GetMapping()
-    public List<Map<String, Object>> team(@RequestParam("championshipId") Optional<Integer> championshipId) {
+    @GetMapping("/")
+    public List<Map<String, Object>> list(@RequestParam("championshipId") Optional<Integer> championshipId) {
         if (championshipId.isPresent()) {
             return new teamstruc(teamRep.findTeamsByChampionships_Id(championshipId.get().longValue())).getdata();
         } else {
